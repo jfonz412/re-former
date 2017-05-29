@@ -1,3 +1,4 @@
+<!--OLD FORM
 <form accept-charset="UTF-8" method="POST" action="/users">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	<fieldset>
@@ -13,3 +14,34 @@
 		<input type="submit" value="Submit">
 	</fieldset>
 </form>
+-->
+
+
+<!--#form_tag
+<%= form_tag("/users", method: "post") do %>
+	<%= label_tag(:username, "Username:") %>
+	<%= text_field_tag(:username) %><br>
+
+	<%= label_tag(:email, "Email:") %>
+	<%= text_field_tag(:email) %><br>
+
+	<%= label_tag(:password, "Password:") %>
+	<%= password_field_tag(:password) %><br>
+
+	<%= submit_tag("Submit") %>
+<% end %>
+ -->
+
+ <%= form_for @user do |f| %>
+ 	Username:<br> 
+ 	<%= f.text_field      :username %><br>
+
+ 	Email:<br>   
+ 	<%= f.text_field      :email, 
+ 												:value => 'example@email.com' %><br>
+
+ 	Password:<br> 
+ 	<%= f.password_field  :password %><br>
+
+ 	<%= f.submit "Submit" %>
+<% end %>
