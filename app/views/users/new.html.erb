@@ -1,0 +1,15 @@
+<form accept-charset="UTF-8" method="POST" action="/users">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<fieldset>
+		<label for="username">Username:</label>
+		<input type="text" name="user[username]"><br>
+
+		<label style="padding-right:34px;" for="email">Email:</label>
+		<input type="text" name="user[email]"><br>
+
+		<label style="padding-right:3px; for="password">Password:</label>
+		<input type="password" name="user[password]"><br>
+
+		<input type="submit" value="Submit">
+	</fieldset>
+</form>
